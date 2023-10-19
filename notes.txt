@@ -1,0 +1,4 @@
+make a header "mytunes" or whatever
+build a form with an <input> where a user can search 
+search button (or enter) that makes the search request to the API 
+^^ start here like with the ajax example
