@@ -1,24 +1,29 @@
 let url = 'https://itunes.apple.com/search?term=dua+lipa&entity=song&limit=20'
 
 let searchResults = document.querySelector('#searchResults')
+let searchForm = document.querySelector("#searchForm")
+let searchField = document.querySelector("[name=searchInput]")
 
-searchButton.addEventListener('click', () => {
-fetch(url)
+searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log(searchField.value);
+    fetch(url)
+    // build url function goes here? 
     .then((response) => {
         console.log(response)
         return response.json()
+        
     }).then((data) => {
         console.log(data)
         console.log(data.results)
         console.log(data.results[0].artistName)
-        // let artist = data.results[0]
-        // let result = document.createElement('div')
-        // result.innerText = `${artist.artistName} ${artist.primaryGenreName} ${artist.trackName}`
-        // searchResults.appendChild(result)
+        
         buildResults(data.results)
     })
 
 })
+
+//make a function to build url string with search field input to add to url variable string
 
 function buildResults(musicArray) {
     for (let result of musicArray) {
@@ -41,3 +46,4 @@ function buildResults(musicArray) {
         resultBox.appendChild(cover)
     }
 }
+
