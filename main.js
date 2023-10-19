@@ -10,7 +10,7 @@ searchForm.addEventListener('submit', (event) => {
     console.log(searchField.value);
     let url = buildUrl(searchField.value);
     fetch(url)
-    // build url function goes here? 
+    
     .then((response) => {
         console.log(response)
         return response.json()
@@ -18,7 +18,7 @@ searchForm.addEventListener('submit', (event) => {
     }).then((data) => {
         console.log(data)
         console.log(data.results)
-        console.log(data.results[0].artistName)
+        // console.log(data.results[0].artistName)
         
         buildResults(data.results)
     })
@@ -32,7 +32,7 @@ function buildResults(musicArray) {
         let resultBox = document.createElement('div')
         resultBox.classList.add('result')
         searchResults.appendChild(resultBox)
-        let songName = document.createElement('h4')
+        let songName = document.createElement('div')
         songName.innerText = result.trackName
         resultBox.appendChild(songName)
         searchResults.appendChild(resultBox) 
@@ -46,6 +46,7 @@ function buildResults(musicArray) {
         cover.classList.add('img') 
         cover.src = result.artworkUrl100
         resultBox.appendChild(cover)
+        //add play button div and nest listener event to play the song preview 
     }
 }
 
@@ -54,11 +55,9 @@ function buildUrl(searchTerm) {
     
     return url
 }
-
+//^^ this works for name without + but you'll need to find the function for building the url string with more terms
 //add div for player and event listener for play button - where do you want the play button
 //
 //function playPreview() {
     //grab the preview value from api
-    //
-
-}
+    //}

@@ -12,11 +12,12 @@
     display: flex;
     flex-wrap: wrap;
 }
-/* .result {
-    /* display: flex;
-    flex-wrap: wrap; */
-/* }
+
+.result {
+    border: 2px solid blueviolet;
+}
 
 .artistName {
+    border: 2px solid orange;
 
-} */
+} 
