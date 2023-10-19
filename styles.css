@@ -8,7 +8,15 @@
 /* body {
     display: flex;
 } */
-
-.result {
-    
+#searchResults {
+    display: flex;
+    flex-wrap: wrap;
 }
+/* .result {
+    /* display: flex;
+    flex-wrap: wrap; */
+/* }
+
+.artistName {
+
+} */

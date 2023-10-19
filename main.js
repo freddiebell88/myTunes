@@ -21,13 +21,23 @@ fetch(url)
 })
 
 function buildResults(musicArray) {
-    for (let song of musicArray) {
-        let songBox = document.createElement('div')
-        songBox.classList.add('result')
+    for (let result of musicArray) {
+        let resultBox = document.createElement('div')
+        resultBox.classList.add('result')
+        searchResults.appendChild(resultBox)
         let songName = document.createElement('h4')
-        songName.innerText = song.trackName
-        songBox.appendChild(songName)
-        searchResults.appendChild(songBox) 
+        songName.innerText = result.trackName
+        resultBox.appendChild(songName)
+        searchResults.appendChild(resultBox) 
+        //add artist name
+        let artistName = document.createElement('div')
+        artistName.innerText = result.artistName
+        artistName.classList.add('artistName')
+        resultBox.appendChild(artistName)
+        //add cover art
+        let cover = document.createElement('img')
+        cover.classList.add('img') 
+        cover.src = result.artworkUrl100
+        resultBox.appendChild(cover)
     }
 }
-
