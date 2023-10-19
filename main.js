@@ -1,4 +1,5 @@
-let url = 'https://itunes.apple.com/search?term=dua+lipa&entity=song&limit=20'
+// let url = 'https://itunes.apple.com/search?term=dua+lipa&entity=song&limit=20'
+
 
 let searchResults = document.querySelector('#searchResults')
 let searchForm = document.querySelector("#searchForm")
@@ -7,6 +8,7 @@ let searchField = document.querySelector("[name=searchInput]")
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
     console.log(searchField.value);
+    let url = buildUrl(searchField.value);
     fetch(url)
     // build url function goes here? 
     .then((response) => {
@@ -47,3 +49,16 @@ function buildResults(musicArray) {
     }
 }
 
+function buildUrl(searchTerm) {
+    let url = 'https://itunes.apple.com/search?term=' + searchTerm + '&entity=song&limit=20'
+    
+    return url
+}
+
+//add div for player and event listener for play button - where do you want the play button
+//
+//function playPreview() {
+    //grab the preview value from api
+    //
+
+}
