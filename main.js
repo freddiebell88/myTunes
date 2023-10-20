@@ -30,7 +30,7 @@ searchForm.addEventListener('submit', (event) => {
 function buildResults(musicArray) {
     for (let result of musicArray) {
         //made result box a button for making it play the song maybe??
-        let resultBox = document.createElement('button')
+        let resultBox = document.createElement('div')
         resultBox.classList.add('result')
         searchResults.appendChild(resultBox)
         //add cover art
@@ -50,6 +50,10 @@ function buildResults(musicArray) {
         resultBox.appendChild(songName)
         searchResults.appendChild(resultBox) 
         //add play button div and nest listener event to play the song preview 
+        let playPreview = document.createElement('button')
+        playPreview.innerText = "PLAY"
+        playPreview.classList.add('playButton')
+        resultBox.appendChild(playPreview)
     }
 }
 
