@@ -32,26 +32,28 @@ function buildResults(musicArray) {
         let resultBox = document.createElement('div')
         resultBox.classList.add('result')
         searchResults.appendChild(resultBox)
-        let songName = document.createElement('div')
-        songName.innerText = result.trackName
-        resultBox.appendChild(songName)
-        searchResults.appendChild(resultBox) 
-        //add artist name
-        let artistName = document.createElement('div')
-        artistName.innerText = result.artistName
-        artistName.classList.add('artistName')
-        resultBox.appendChild(artistName)
         //add cover art
         let cover = document.createElement('img')
         cover.classList.add('img') 
         cover.src = result.artworkUrl100
         resultBox.appendChild(cover)
+        //add artist name
+        let artistName = document.createElement('div')
+        artistName.innerText = result.artistName
+        artistName.classList.add('artistName', 'result')
+        resultBox.appendChild(artistName)
+        //add song name
+        let songName = document.createElement('div')
+        songName.innerText = result.trackName
+        songName.classList.add('songName', 'result')
+        resultBox.appendChild(songName)
+        searchResults.appendChild(resultBox) 
         //add play button div and nest listener event to play the song preview 
     }
 }
 
 function buildUrl(searchTerm) {
-    let url = 'https://itunes.apple.com/search?term=' + searchTerm + '&entity=song&limit=20'
+    let url = 'https://itunes.apple.com/search?term=' + searchTerm + '&entity=song&limit=25'
     
     return url
 }

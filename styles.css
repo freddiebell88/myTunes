@@ -1,23 +1,47 @@
 * {
     font-family: 'Oswald', sans-serif;
     font-family: 'Signika', sans-serif;
+    background-color: rgb(7, 246, 167);
+    color: white;
 }
-
-
 
 /* body {
     display: flex;
-} */
+    /* justify-content: center; */
+/*  */
+
+h1 {
+    text-align: center;
+    text-shadow: lightblue 2px 5px;
+}
+#searchForm {
+    display: flex;
+    justify-content: center;
+    
+}
+
+h2 {
+    border-top: 1px dashed black;
+    text-align: center;
+    
+}
 #searchResults {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px
 }
 
 .result {
-    border: 2px solid blueviolet;
+    background-color: rgb(103, 176, 239);
+    max-width: 100px;
+    
 }
 
 .artistName {
     border: 2px solid orange;
-
+    font-style: italic;
 } 
+
+.songName {
+    font-size: 14px;
+}
