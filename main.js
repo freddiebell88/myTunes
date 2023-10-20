@@ -29,7 +29,8 @@ searchForm.addEventListener('submit', (event) => {
 
 function buildResults(musicArray) {
     for (let result of musicArray) {
-        let resultBox = document.createElement('div')
+        //made result box a button for making it play the song maybe??
+        let resultBox = document.createElement('button')
         resultBox.classList.add('result')
         searchResults.appendChild(resultBox)
         //add cover art
