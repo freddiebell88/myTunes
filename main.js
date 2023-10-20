@@ -53,8 +53,8 @@ function buildResults(musicArray) {
     }
 }
 
-function buildUrl(searchTerm) {
-    let url = 'https://itunes.apple.com/search?term=' + searchTerm + '&entity=song&limit=25'
+function buildUrl(searchField) {
+    let url = 'https://itunes.apple.com/search?term=' + searchField.split(' ').join('+') + '&entity=song&limit=25'
     
     return url
 }
