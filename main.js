@@ -1,6 +1,3 @@
-// let url = 'https://itunes.apple.com/search?term=dua+lipa&entity=song&limit=20'
-
-
 let searchResults = document.querySelector('#searchResults')
 let searchForm = document.querySelector("#searchForm")
 let searchField = document.querySelector("[name=searchInput]")
@@ -25,7 +22,6 @@ searchForm.addEventListener('submit', (event) => {
 
 })
 
-//make a function to build url string with search field input to add to url variable string
 
 function buildResults(musicArray) {
     for (let result of musicArray) {
@@ -35,7 +31,7 @@ function buildResults(musicArray) {
         searchResults.appendChild(resultBox)
         //add cover art
         let cover = document.createElement('img')
-        cover.classList.add('img') 
+        cover.classList.add('cover') 
         cover.src = result.artworkUrl100
         resultBox.appendChild(cover)
         //add artist name
@@ -50,10 +46,16 @@ function buildResults(musicArray) {
         resultBox.appendChild(songName)
         searchResults.appendChild(resultBox) 
         //add play button div and nest listener event to play the song preview 
-        let playPreview = document.createElement('button')
-        playPreview.innerText = "PLAY"
-        playPreview.classList.add('playButton')
-        resultBox.appendChild(playPreview)
+        let playButton = document.createElement('button')
+        playButton.innerText = "PLAY"
+        playButton.classList.add('playButton')
+        resultBox.appendChild(playButton)
+        //play song
+        playButton.addEventListener('click', () => {
+            console.log("let's hear it!")
+            let playPreview = document.querySelector("audio");
+            playPreview.src = result.previewUrl
+        })
     }
 }
 
@@ -62,7 +64,7 @@ function buildUrl(searchField) {
     
     return url
 }
-//^^ this works for name without + but you'll need to find the function for building the url string with more terms
+
 //add div for player and event listener for play button - where do you want the play button
 //
 //function playPreview() {
