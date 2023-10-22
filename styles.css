@@ -55,6 +55,10 @@ h2 {
     font-size: 14px;
 }
 
+.albumName {
+    font-size: 14px;
+}
+
 .playButton {
     margin: 5px 30%;
 }

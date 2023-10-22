@@ -46,6 +46,11 @@ searchForm.addEventListener('submit', (event) => {
         songName.innerText = result.trackName
         songName.classList.add('songName', 'result')
         resultBox.appendChild(songName)
+        //add album name
+        let albumName = document.createElement('div')
+        albumName.innerText = result.collectionName
+        albumName.classList.add('albumName', 'result')
+        resultBox.appendChild(albumName)
         searchResults.appendChild(resultBox) 
         //add play button div and nest listener event to play the song preview 
         let playButton = document.createElement('button')
@@ -54,14 +59,20 @@ searchForm.addEventListener('submit', (event) => {
         resultBox.appendChild(playButton)
         //play song
         playButton.addEventListener('click', () => {
+            console.log("Now Playing")
             let playPreview = document.querySelector("audio");
-            playPreview.src = result.previewUrl
-            let audioBox = document.querySelector("#audioBox")
-            let audioText = document.createElement('div')
-            
-            audioText.innerText = `NOW PLAYING ${result.trackName}, ${result.artistName}, ${result.collectionName}`
-            audioText.classList.add("audioText")
-            audioBox.appendChild(audioText)
+            playPreview.src = `${result.previewUrl}`;
+            playPreview.innerText = "Now Playing:";
+            let currentSong = document.createElement('div')
+            currentSong.classList.add("currentSong")
+            currentSong.innerText = `${result.trackName}, ${result.artistName}, ${result.collectionName}`
+
+            // let audioBox = document.querySelector("#audioBox")
+            // let audioText = document.createElement('div')
+        
+            // audioText.innerText = `NOW PLAYING ${result.trackName}, ${result.artistName}, ${result.collectionName}`
+            // audioText.classList.add("audioText")
+            // audioBox.appendChild(audioText)
         })
     }
 }
