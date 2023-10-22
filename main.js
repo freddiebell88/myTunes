@@ -7,25 +7,26 @@ searchForm.addEventListener('submit', (event) => {
     console.log(searchField.value);
     let url = buildUrl(searchField.value);
     fetch(url)
-    
     .then((response) => {
         console.log(response)
-        return response.json()
-        
+        return response.json()    
     }).then((data) => {
         console.log(data)
         console.log(data.results)
-        // console.log(data.results[0].artistName)
         
         buildResults(data.results)
+    }).catch((error) => {
+        console.log("Uh oh!")
+        })
     })
-
-})
-
-
-function buildResults(musicArray) {
+    
+    function buildResults(musicArray) {
+        searchResults.innerHTML = ""
+    if (musicArray.length === 0) {
+        searchResults.innerText = "Nothing to see here. Try Again."
+    } else {
     for (let result of musicArray) {
-        //made result box a button for making it play the song maybe??
+    
         let resultBox = document.createElement('div')
         resultBox.classList.add('result')
         searchResults.appendChild(resultBox)
@@ -52,11 +53,18 @@ function buildResults(musicArray) {
         resultBox.appendChild(playButton)
         //play song
         playButton.addEventListener('click', () => {
-            console.log("let's hear it!")
+            // console.log("let's hear it!")
             let playPreview = document.querySelector("audio");
             playPreview.src = result.previewUrl
+            let audioBox = document.querySelector("#audioBox")
+            let audioText = document.createElement('div')
+            console.log(`${result.trackName}, ${result.artistName}`)
+            audioText.innerText = `${result.trackName}, ${result.artistName}`
+            audioText.classList.add("audioText")
+            audioBox.appendChild(audioText)
         })
     }
+}
 }
 
 function buildUrl(searchField) {
@@ -64,9 +72,3 @@ function buildUrl(searchField) {
     
     return url
 }
-
-//add div for player and event listener for play button - where do you want the play button
-//
-//function playPreview() {
-    //grab the preview value from api
-    //}

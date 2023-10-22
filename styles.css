@@ -16,6 +16,9 @@ audio {
     margin-right: auto;
     width: 500px
 }
+.audioText {
+    padding-left: 90px;
+}
 #searchForm {
     display: flex;
     justify-content: center;
@@ -36,11 +39,14 @@ h2 {
 }
 
 .result {
+    border-radius: 10px;
     background-color: rgb(103, 176, 239);
     width: 125px;
 }
 
-
+.cover {
+    margin: 10%;
+}
 .artistName {
     font-style: italic;
 } 
@@ -50,5 +56,5 @@ h2 {
 }
 
 .playButton {
-    margin: 2px 30%;
+    margin: 5px 30%;
 }
