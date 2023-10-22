@@ -2,6 +2,7 @@ let searchResults = document.querySelector('#searchResults')
 let searchForm = document.querySelector("#searchForm")
 let searchField = document.querySelector("[name=searchInput]")
 
+
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
     console.log(searchField.value);
@@ -53,19 +54,20 @@ searchForm.addEventListener('submit', (event) => {
         resultBox.appendChild(playButton)
         //play song
         playButton.addEventListener('click', () => {
-            // console.log("let's hear it!")
             let playPreview = document.querySelector("audio");
             playPreview.src = result.previewUrl
             let audioBox = document.querySelector("#audioBox")
             let audioText = document.createElement('div')
-            console.log(`${result.trackName}, ${result.artistName}`)
-            audioText.innerText = `${result.trackName}, ${result.artistName}`
+            
+            audioText.innerText = `NOW PLAYING ${result.trackName}, ${result.artistName}, ${result.collectionName}`
             audioText.classList.add("audioText")
             audioBox.appendChild(audioText)
+            
         })
     }
 }
 }
+//need to replace now playing text 
 
 function buildUrl(searchField) {
     let url = 'https://itunes.apple.com/search?term=' + searchField.split(' ').join('+') + '&entity=song&limit=25'
