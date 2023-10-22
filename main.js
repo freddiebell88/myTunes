@@ -62,7 +62,6 @@ searchForm.addEventListener('submit', (event) => {
             audioText.innerText = `NOW PLAYING ${result.trackName}, ${result.artistName}, ${result.collectionName}`
             audioText.classList.add("audioText")
             audioBox.appendChild(audioText)
-            
         })
     }
 }
