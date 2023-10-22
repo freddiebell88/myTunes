@@ -62,10 +62,10 @@ searchForm.addEventListener('submit', (event) => {
             console.log("Now Playing")
             let playPreview = document.querySelector("audio");
             playPreview.src = `${result.previewUrl}`;
-            playPreview.innerText = "Now Playing:";
-            let currentSong = document.createElement('div')
-            currentSong.classList.add("currentSong")
-            currentSong.innerText = `${result.trackName}, ${result.artistName}, ${result.collectionName}`
+            
+            let nowPlaying = document.querySelector("#nowPlaying")
+            nowPlaying.innerText = `Now Playing: ${result.trackName}, ${result.artistName}, ${result.collectionName}`
+            
 
             // let audioBox = document.querySelector("#audioBox")
             // let audioText = document.createElement('div')
