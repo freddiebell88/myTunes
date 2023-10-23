@@ -16,20 +16,18 @@ audio {
     margin-right: auto;
     width: 500px
 }
-.audioText {
-    padding-left: 90px;
-}
+
 #searchForm {
     display: flex;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 3rem;
     
 }
 
 h2 {
     border-top: 1px dashed black;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 1rem;
     
 }
 #searchResults {
@@ -38,7 +36,7 @@ h2 {
     gap: 15px
 }
 
-.result {
+.songBox {
     border-radius: 10px;
     background-color: rgb(103, 176, 239);
     width: 125px;
@@ -61,4 +59,8 @@ h2 {
 
 .playButton {
     margin: 5px 30%;
+}
+
+#nowPlaying {
+    text-align: center;
 }

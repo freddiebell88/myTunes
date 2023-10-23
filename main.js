@@ -1,6 +1,8 @@
 let searchResults = document.querySelector('#searchResults')
 let searchForm = document.querySelector("#searchForm")
 let searchField = document.querySelector("[name=searchInput]")
+let playPreview = document.querySelector("audio")
+let nowPlaying = document.querySelector("#nowPlaying")
 
 
 searchForm.addEventListener('submit', (event) => {
@@ -29,7 +31,7 @@ searchForm.addEventListener('submit', (event) => {
     for (let result of musicArray) {
     
         let resultBox = document.createElement('div')
-        resultBox.classList.add('result')
+        resultBox.classList.add('songBox')
         searchResults.appendChild(resultBox)
         //add cover art
         let cover = document.createElement('img')
@@ -39,17 +41,17 @@ searchForm.addEventListener('submit', (event) => {
         //add artist name
         let artistName = document.createElement('div')
         artistName.innerText = result.artistName
-        artistName.classList.add('artistName', 'result')
+        artistName.classList.add('artistName', 'songBox')
         resultBox.appendChild(artistName)
         //add song name
         let songName = document.createElement('div')
         songName.innerText = result.trackName
-        songName.classList.add('songName', 'result')
+        songName.classList.add('songName', 'songBox')
         resultBox.appendChild(songName)
         //add album name
         let albumName = document.createElement('div')
         albumName.innerText = result.collectionName
-        albumName.classList.add('albumName', 'result')
+        albumName.classList.add('albumName', 'songBox')
         resultBox.appendChild(albumName)
         searchResults.appendChild(resultBox) 
         //add play button div and nest listener event to play the song preview 
@@ -59,28 +61,16 @@ searchForm.addEventListener('submit', (event) => {
         resultBox.appendChild(playButton)
         //play song
         playButton.addEventListener('click', () => {
-            console.log("Now Playing")
-            let playPreview = document.querySelector("audio");
             playPreview.src = `${result.previewUrl}`;
-            
-            let nowPlaying = document.querySelector("#nowPlaying")
             nowPlaying.innerText = `Now Playing: ${result.trackName}, ${result.artistName}, ${result.collectionName}`
             
-
-            // let audioBox = document.querySelector("#audioBox")
-            // let audioText = document.createElement('div')
-        
-            // audioText.innerText = `NOW PLAYING ${result.trackName}, ${result.artistName}, ${result.collectionName}`
-            // audioText.classList.add("audioText")
-            // audioBox.appendChild(audioText)
         })
     }
 }
 }
-//need to replace now playing text 
+
 
 function buildUrl(searchField) {
     let url = 'https://itunes.apple.com/search?term=' + searchField.split(' ').join('+') + '&entity=song&limit=25'
-    
     return url
 }
