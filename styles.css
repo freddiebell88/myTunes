@@ -26,12 +26,9 @@ audio {
     display: flex;
     justify-content: center;
     padding-top: 3rem;
-    
-    
 }
 
 h2 {
-    border-top: 1px dashed black;
     text-align: center;
     padding-top: 1rem;
     
@@ -71,6 +68,3 @@ h2 {
     text-align: center;
 }
 
-.selected {
-    background-color: orange;
-}

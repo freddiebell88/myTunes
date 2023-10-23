@@ -4,6 +4,7 @@ let searchField = document.querySelector("[name=searchInput]")
 let playPreview = document.querySelector("audio")
 let nowPlaying = document.querySelector("#nowPlaying")
 let mainContainer = document.querySelector("#mainContainer")
+let resultsHeader = document.querySelector("h2")
 
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -24,6 +25,7 @@ searchForm.addEventListener('submit', (event) => {
     
     function buildResults(musicArray) {
         searchResults.innerHTML = ""
+        resultsHeader.innerText = "Search Results"
     if (musicArray.length === 0) {
         searchResults.innerText = "Nothing to see here. Try Again."
     } else {
