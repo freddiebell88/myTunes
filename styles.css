@@ -3,6 +3,7 @@
     font-family: 'Signika', sans-serif;
     background-color: rgb(47, 211, 90);
     color: white;
+    box-sizing: border-box;
 }
 #mainContainer{
     display: flex;
@@ -19,7 +20,7 @@ audio {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50rem
+    width: 75vw
 }
 
 #searchForm {
@@ -27,6 +28,16 @@ audio {
     justify-content: center;
     padding-top: 3rem;
 }
+
+input[type=text] {
+    margin: 0 1rem;
+    border: 0;
+    box-shadow: 2px 2px 5px lime;
+    border-radius: 10px;
+    width: 50vw;
+    font-family: inherit;
+}
+
 
 h2 {
     text-align: center;
