@@ -3,7 +3,7 @@ let searchForm = document.querySelector("#searchForm")
 let searchField = document.querySelector("[name=searchInput]")
 let playPreview = document.querySelector("audio")
 let nowPlaying = document.querySelector("#nowPlaying")
-
+let mainContainer = document.querySelector("#mainContainer")
 
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -15,8 +15,8 @@ searchForm.addEventListener('submit', (event) => {
     }).then((data) => {
         console.log(data)
         console.log(data.results)
-        
         buildResults(data.results)
+        mainContainer.style.paddingTop = "5vh"
     }).catch((error) => {
         console.log("Uh oh!")
         })
@@ -61,7 +61,11 @@ searchForm.addEventListener('submit', (event) => {
         //play song
         playButton.addEventListener('click', () => {
             playPreview.src = `${result.previewUrl}`;
-            nowPlaying.innerText = `Now Playing: ${result.trackName}, ${result.artistName}, ${result.collectionName}`
+            nowPlaying.innerText = `Now Playing: ${result.trackName}, ${result.artistName}, ${result.collectionName}`;
+            resultBox.style.backgroundColor = "orange";
+            artistName.style.backgroundColor = "orange";
+            songName.style.backgroundColor = "orange";
+            albumName.style.backgroundColor = "orange";
             
         })
     }
