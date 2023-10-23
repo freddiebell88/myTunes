@@ -7,7 +7,6 @@ let nowPlaying = document.querySelector("#nowPlaying")
 
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(searchField.value);
     let url = buildUrl(searchField.value);
     fetch(url)
     .then((response) => {
