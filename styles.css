@@ -88,6 +88,10 @@ h2 {
 
 .playButton {
     margin: 5px 30%;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px lime;
+    
 }
 
 #nowPlaying {
