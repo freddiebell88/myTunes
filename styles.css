@@ -69,13 +69,18 @@ h2 {
     border-radius: 10px;
     background-color: rgb(12, 108, 192);
     width: 125px;
-    /* height: auto; */
     display: flex;
     flex-direction: column;
 }
 
 .songBoxText {
-    padding-left: 5%;
+    border: 3px solid lime;
+    /* overflow: hidden; */
+    white-space: nowrap;
+    width: 120px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    text-overflow: ellipsis;
 }
 
 .cover {
@@ -102,7 +107,6 @@ h2 {
     border: 1;
     border-radius: 50%;
     background-color: rgb(158, 43, 224);
-    /* box-shadow: 2px 2px 5px rgb(158, 43, 224); */
     
 }
 
