@@ -64,12 +64,14 @@ searchForm.addEventListener('submit', (event) => {
         playButton.addEventListener('click', () => {
             playPreview.src = `${result.previewUrl}`;
             nowPlaying.innerText = `Now Playing: ${result.trackName}, ${result.artistName}, ${result.collectionName}`;
-            resultBox.style.backgroundColor = "orange";
-            artistName.style.backgroundColor = "orange";
-            songName.style.backgroundColor = "orange";
-            albumName.style.backgroundColor = "orange";
-            
         })
+        //change color when hovering mouse over songbox
+    //     resultBox.addEventListener('mouseover', () => {
+    //     resultBox.style.backgroundColor = "orange";
+    //     artistName.style.backgroundColor = "orange";
+    //     songName.style.backgroundColor = "orange";
+    //     albumName.style.backgroundColor = "orange";
+    // });
     }
 }
 }

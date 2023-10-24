@@ -91,11 +91,13 @@ h2 {
 }
 
 .playButton {
+    appearance: none;
+    -webkit-appearance: none;
     margin: 5px 30%;
     width: 20%;
-    /* height: 15%; */
+    height: 10%;
     border: 0;
-    border-radius: 10px;
+    border-radius: 50%;
     background-color: rgb(158, 43, 224);
     /* box-shadow: 2px 2px 5px rgb(158, 43, 224); */
     
