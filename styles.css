@@ -69,6 +69,9 @@ h2 {
     border-radius: 10px;
     background-color: rgb(12, 108, 192);
     width: 125px;
+    /* height: auto; */
+    display: flex;
+    flex-direction: column;
 }
 
 .songBoxText {
@@ -93,10 +96,10 @@ h2 {
 .playButton {
     appearance: none;
     -webkit-appearance: none;
-    margin: 5px 30%;
-    width: 20%;
-    height: 10%;
-    border: 0;
+    margin: 5px 37% 30%;
+    width: 30px;
+    height: 30px;
+    border: 1;
     border-radius: 50%;
     background-color: rgb(158, 43, 224);
     /* box-shadow: 2px 2px 5px rgb(158, 43, 224); */
