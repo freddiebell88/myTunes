@@ -16,6 +16,13 @@ h1 {
     text-shadow: rgb(173, 230, 197) 1px 2px;
 }
 
+h1::after {
+    content:"find your jam";
+    color: green;
+    font-style: oblique;
+    font-size: smaller;
+}
+
 audio {
     display: block;
     margin-left: auto;
@@ -38,6 +45,14 @@ input[type=text] {
     font-family: inherit;
 }
 
+button[type=submit] {
+    appearance: none;
+    border: 0;
+    box-shadow: 2px 2px 10px lime;
+    border-radius: 10px;
+    width: 12%;
+    font-style: oblique;
+}
 
 h2 {
     text-align: center;
