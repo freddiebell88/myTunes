@@ -42,22 +42,22 @@ searchForm.addEventListener('submit', (event) => {
         //add artist name
         let artistName = document.createElement('div')
         artistName.innerText = result.artistName
-        artistName.classList.add('artistName', 'songBox')
+        artistName.classList.add('artistName', 'songBox', 'songBoxText')
         resultBox.appendChild(artistName)
         //add song name
         let songName = document.createElement('div')
         songName.innerText = result.trackName
-        songName.classList.add('songName', 'songBox')
+        songName.classList.add('songName', 'songBox', 'songBoxText')
         resultBox.appendChild(songName)
         //add album name
         let albumName = document.createElement('div')
         albumName.innerText = result.collectionName
-        albumName.classList.add('albumName', 'songBox')
+        albumName.classList.add('albumName', 'songBox', 'songBoxText')
         resultBox.appendChild(albumName)
         searchResults.appendChild(resultBox) 
         //add play button div and nest listener event to play the song preview 
         let playButton = document.createElement('button')
-        playButton.innerText = "PLAY"
+        playButton.innerText = "▶"
         playButton.classList.add('playButton')
         resultBox.appendChild(playButton)
         //play song
