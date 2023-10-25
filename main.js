@@ -66,6 +66,7 @@ searchForm.addEventListener('submit', (event) => {
 }
 }
 
+
 function buildUrl(searchField) {
     let url = 'https://itunes.apple.com/search?term=' + searchField.split(' ').join('+') + '&entity=song&limit=25'
     return url
