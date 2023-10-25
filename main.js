@@ -15,6 +15,7 @@ searchForm.addEventListener('submit', (event) => {
     }).then((data) => {
         buildResults(data.results)
         mainContainer.style.paddingTop = "5vh"
+        playPreview.style.display = "block"
     }).catch((error) => {
         console.log("Uh oh!")
         })
