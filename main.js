@@ -60,7 +60,7 @@ searchForm.addEventListener('submit', (event) => {
         //play song
         playButton.addEventListener('click', () => {
             playPreview.src = `${result.previewUrl}`;
-            nowPlaying.innerText = `Now Playing: ${result.trackName}, ${result.artistName}, ${result.collectionName}`;
+            nowPlaying.innerText = `You're Jamming to: ${result.trackName}, ${result.artistName}, ${result.collectionName}`;
         })
     }
 }

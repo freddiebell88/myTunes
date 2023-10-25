@@ -13,9 +13,9 @@
 }
 h1 {
     text-align: center;
-    /* text-shadow: rgb(173, 230, 197) 1px 2px; */
 }
 
+/* adding tagline to header */
 h1::after {
     content:"find your jam";
     color: rgb(158, 43, 224);
@@ -73,6 +73,7 @@ h2 {
     flex-direction: column;
 }
 
+/* truncate long text and then make it visible when user mouses over */
 .songBoxText {
     display: block;
     overflow: hidden;
@@ -87,10 +88,10 @@ h2 {
     white-space: normal;
 }
 
-
 .cover {
     margin: 10%;
 }
+
 .artistName {
     font-style: italic;
 } 
