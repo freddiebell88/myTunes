@@ -23,11 +23,16 @@ h1::after {
     font-size: smaller;
 }
 
+/* keeping audio player hidden until button submit event */
 audio {
     display: none;
     margin-left: auto;
     margin-right: auto;
     width: 75vw
+}
+
+#nowPlaying {
+    text-align: center;
 }
 
 #searchForm {
@@ -62,7 +67,8 @@ h2 {
 #searchResults {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px
+    gap: 15px;
+    margin-left: 2rem
 }
 
 .songBox {
@@ -73,23 +79,24 @@ h2 {
     flex-direction: column;
 }
 
+.cover {
+    margin: 10%;
+}
+
 /* truncate long text and then make it visible when user mouses over */
 .songBoxText {
     display: block;
     overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
     width: 120px;
     padding: 0% 5%;
-    text-overflow: ellipsis;
 }
 
+/* display overflow text during mouseover event */
 .songBoxText:hover {
     overflow: visible;
     white-space: normal;
-}
-
-.cover {
-    margin: 10%;
 }
 
 .artistName {
@@ -104,6 +111,7 @@ h2 {
     font-size: 14px;
 }
 
+/* remove inherit display features and adding custom */
 .playButton {
     appearance: none;
     -webkit-appearance: none;
@@ -112,11 +120,5 @@ h2 {
     height: 30px;
     border: 1;
     border-radius: 50%;
-    background-color: rgb(158, 43, 224);
-    
+    background-color: rgb(158, 43, 224); 
 }
-
-#nowPlaying {
-    text-align: center;
-}
-
